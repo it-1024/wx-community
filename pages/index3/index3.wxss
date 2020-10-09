@@ -1,0 +1,58 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.touxing_cont {
+  width: 100%;
+  height: 256rpx;
+  padding-top: 39rpx;
+  text-align: center;
+  background: #49acf3;
+}
+
+.touxing_img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  border: 1px solid #aad7f7;
+}
+
+.name {
+  font-size: 13px;
+  color: #fff;
+}
+
+.content_select view {
+  margin-top: 22rpx;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+  background: #fff;
+}
+
+/*  */
+
+.tishi {
+  margin-top: 100rpx;
+  width: 100%;
+  height: 239rpx;
+  text-align: center;
+}
+
+.tishi view {
+  width: 80%;
+  padding-top: 10rpx;
+  font-size: 11px;
+  color: #666;
+  margin: 0 auto;
+}
+
+.getUserInfo {
+  width: 66%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 13px;
+  background: #49acf3;
+}

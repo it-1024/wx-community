@@ -1,0 +1,62 @@
+<form bindsubmit='sousuo'>
+  <view class='sousuo'>
+    <input placeholder="{{guanjianz}}" name="sousuo_val" value='{{sousuo_value}}'></input>
+    <button form-type='submit'>{{sousuos}}</button>
+  </view>
+</form>
+<view>
+  <view class='remensousuo_title'>{{remensousuos}}</view>
+  <view class='remensousuo_val'>
+    <text bindtap='select_remen' id="{{danjians}}">{{danjians}}</text>
+    <text bindtap='select_remen' id="{{shoujis}}">{{shoujis}}</text>
+  </view>
+</view>
+<block wx:for="{{datas}}" wx:for-index="idx" wx:for-item="dataName" wx:key="">
+  <view class='content_content'>
+    <view class='yonghuxinxi'>
+      <image src="{{dataName.touxiang_img}}"></image>
+      <view class='yonghux_img'>
+        <text>{{dataName.username}}</text>
+        <text class='times'>{{dataName.times}}</text>
+      </view>
+      <view bindtap='boda' id='{{dataName.haoma}}' class='lianxita'>{{lianxita}}</view>
+    </view>
+    <navigator url="../index4/index4?id={{dataName.id}}" hover-class="navigator-hover">
+      <view class='content_value'>
+        <view class='content_value_01'>
+          <text class='content_value_title'>#{{dataName.select_val}}#</text>
+          <text>{{dataName.neirong}}</text>
+        </view>
+      </view>
+    </navigator>
+    <view class='content_imgs' wx:if="{{dataName.imgurl_01=='undefined'?false:true}}">
+      <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_01=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_01}}" src="{{img_url}}{{dataName.imgurl_01}}"></image>
+      <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_02=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_02}}" src="{{img_url}}{{dataName.imgurl_02}}"></image>
+      <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_03=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_03}}" src="{{img_url}}{{dataName.imgurl_03}}"></image>
+    </view>
+    <view wx:if="{{dataName.dizhi=='undefined'?false:true}}" class='fabudizhi'>
+      <image src='../images/dizhi_img.png'></image>
+      <text>{{dataName.dizhi}}</text>
+    </view>
+    <view class='footer_lldf'>
+      <view class='footer_v'>
+        <image src='../images/liulan_img.png'></image>
+        <block wx:for="{{liulan}}" wx:for-index="idx" wx:for-item="liulanName" wx:key="liulan_key">
+          <block wx:if="{{dataName.id==liulanName.idx?true:false}}">
+            <text>{{liulanName.liulanliang}}</text>
+          </block>
+        </block>
+      </view>
+      <view class='footer_v'>
+        <image src='../images/ly_img.png'></image>
+      </view>
+      <button open-type="share" id='{{dataName.id}}' data-title='{{dataName.neirong}}' class='footer_v fenxiang'>
+        <image src='../images/fx_img.png'></image>
+        {{fenxiang}}
+      </button>
+    </view>
+  </view>
+</block>
+<view class='no_val' wx:if="{{no_val}}">
+  <text>{{wuxiangguanxx}}</text>
+</view>

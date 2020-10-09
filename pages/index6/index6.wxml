@@ -1,0 +1,42 @@
+<view class='daohang'>
+  <view class='content_daohang'>
+    <navigator url="../index2/index2?select_val={{fangyuan}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_01.png'></image>
+        <view>{{fangyuan}}</view>
+      </view>
+    </navigator>
+    <navigator url="../index2/index2?select_val={{zhuanzu}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_02.png'></image>
+        <view>{{zhuanzu}}</view>
+      </view>
+    </navigator>
+    <navigator url="../index2/index2?select_val={{quanzhi}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_03.png'></image>
+        <view>{{quanzhi}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class='content_daohang content_daohang_02'>
+    <navigator url="../index2/index2?select_val={{jianzhi}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_04.png'></image>
+        <view>{{jianzhi}}</view>
+      </view>
+    </navigator>
+    <navigator url="../index2/index2?select_val={{ershouwupin}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_05.png'></image>
+        <view>{{ershouwupin}}</view>
+      </view>
+    </navigator>
+    <navigator url="../index2/index2?select_val={{congwu}}" hover-class="navigator-hover">
+      <view>
+        <image src='../images/daohang_06.png'></image>
+        <view>{{congwu}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

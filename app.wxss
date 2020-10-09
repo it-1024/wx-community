@@ -1,0 +1,7 @@
+.navigator-hover {
+  background: transparent;
+}
+
+button::after {
+  border: none;
+}

@@ -1,0 +1,116 @@
+<block wx:for="{{datas}}" wx:for-index="idx" wx:for-item="dataName" wx:key="datas_key">
+  <view class='content_content'>
+    <view>
+      <view>
+        <text class='content_value_title'>#{{dataName.select_val}}#</text>
+        <block wx:for="{{liulan}}" wx:for-index="idx" wx:for-item="liulanName" wx:key="liulan_key">
+          <text class='liulanliang_4' wx:if="{{dataName.id==liulanName.idx?true:false}}">
+              {{liulanliangs}}{{liulanName.liulanliang}}
+          </text>
+        </block>
+        <view bindtap='select_del' class='content_del'>
+          <text class='del_'></text>
+        </view>
+      </view>
+      <view class='del_val' wx:if="{{if_del_val}}">
+        <view bindtap='del_' id='{{dataName.id}}' wx:if="{{dataName.username==name?true:false}}" data-url01='{{dataName.imgurl_01}}' data-url02='{{dataName.imgurl_02}}' data-url03='{{dataName.imgurl_03}}' data-url04='{{dataName.imgurl_04}}' data-url05='{{dataName.imgurl_05}}'
+          data-url06='{{dataName.imgurl_06}}'>{{dels}}</view>
+        <view bindtap='jbao'>{{jubao}}</view>
+      </view>
+      <view bindtap='select_del' class='zhezhao' wx:if="{{if_del_val}}"></view>
+    </view>
+    <view class='yonghuxinxi'>
+      <image src="{{dataName.touxiang_img}}"></image>
+      <view class='yonghux_img'>
+        <text class='username'>{{dataName.username}}</text>
+        <view wx:if="{{dataName.dizhi=='undefined'?false:true}}" class='dizhi'>
+          <image src='../images/dizhi_img.png'></image>
+          <text class='dizhi_name'>{{dataName.dizhi}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='content_value'>
+      <view class='content_value_01'>
+        <text>{{dataName.neirong}}</text>
+      </view>
+    </view>
+    <view class='content_imgs'>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_01=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_01}}" src="{{img_url}}{{dataName.imgurl_01}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_02=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_02}}" src="{{img_url}}{{dataName.imgurl_02}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_03=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_03}}" src="{{img_url}}{{dataName.imgurl_03}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_04=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_04}}" src="{{img_url}}{{dataName.imgurl_04}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_05=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_05}}" src="{{img_url}}{{dataName.imgurl_05}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_06=='undefined'?false:true}}" id="{{img_url}}{{dataName.imgurl_06}}" src="{{img_url}}{{dataName.imgurl_06}}"></image>
+    </view>
+    <view class='ping_zhanshi'>
+      <view class='quanbupinglun'>
+        {{quanbupingls}}（{{ly_size}}）
+      </view>
+      <block wx:for="{{ping_val}}" wx:for-index="idx" wx:for-item="ping_val_Name" wx:key="ping_val_key">
+        <view class='ping_contents' wx:if="{{ping_val_Name.idx==dataName.id?true:false}}">
+          <text bindtap='useame' class='ping_useame_01' wx:if="{{ping_val_Name.ping_val==''?false:true}}" data-hui_useame='{{ping_val_Name.useame_01}}' data-hui="{{ping_val_Name.useame_01}}">{{ping_val_Name.useame_01}}</text>
+          <text class='ping_times' wx:if="{{ping_val_Name.ping_val==''?false:true}}">{{ping_val_Name.times}}</text>
+          <image bindtap='useame' class='hui_img' wx:if="{{ping_val_Name.ping_val==''?false:true}}" data-hui_useame='{{ping_val_Name.useame_01}}' data-hui="{{ping_val_Name.useame_01}}" src='../images/ly_img.png'></image>
+          <text class='ping_val'>{{ping_val_Name.ping_val}}</text>
+          <view class='huifu_content' wx:if="{{ping_val_Name.useame_02==''?false:true}}">
+            <text>{{ping_val_Name.useame_01}}</text>
+            <text class='ping_hui'>{{ping_val_Name.ping_hui}}</text>
+            <text>{{ping_val_Name.useame_02}}</text>
+            <text>：{{ping_val_Name.hui_val}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+  <form bindsubmit="ping_form">
+    <view class='ping_content' wx:if="{{if_guanbi}}">
+      <view class='ping_title'>
+        <text>{{pingls}}</text>
+        <text bindtap='ping_guan' class='ping_guanbi'>{{guanbis}}</text>
+      </view>
+      <view class='ping_text'>
+        <textarea name="ping_txt" fixed="true" cursor-spacing='120' placeholder='{{ping_placeholder}}' placeholder-style="font-size:10px;"></textarea>
+      </view>
+      <view class='ping_btn'>
+        <button formType="submit">{{fasongs}}</button>
+      </view>
+    </view>
+  </form>
+  <form bindsubmit="hui_form">
+    <view class='ping_content' wx:if="{{hui_guan}}">
+      <view class='ping_title'>
+        <text>{{pingls}}</text>
+        <text bindtap='hui_guan' class='ping_guanbi'>{{guanbis}}</text>
+      </view>
+      <view class='ping_text'>
+        <textarea name="hui_txt" fixed="true" cursor-spacing='120' placeholder='{{ping_placeholder}}' placeholder-style="font-size:10px;"></textarea>
+      </view>
+      <view class='ping_btn'>
+        <button formType="submit">{{fasongs}}</button>
+      </view>
+    </view>
+  </form>
+  <!-- footer -->
+  <view class='footer'>
+    <view bindtap='shouye' class='footer_daohang'>
+      <image src='../images/shouye_img.png'></image>
+      <view>{{shouyes}}</view>
+    </view>
+    <button open-type="share" class='footer_daohang footer_fenxiang' id='{{dataName.id}}' data-title='{{dataName.neirong}}'>
+      <image src='../images/fx_img.png'></image>
+      <view>{{fenxiang}}</view>
+    </button>
+    <view bindtap='ping_guan' data-ping="{{dataName.username}}" class='footer_daohang'>
+      <image src='../images/ly_img.png'></image>
+      <view>{{pingls}}</view>
+    </view>
+    <view bindtap='fabu' class='footer_daohang'>
+      <image class='dianz_img' src='../images/dianz_img.png'></image>
+      <view>{{dianzans}}</view>
+    </view>
+    <view bindtap='boda' id='{{dataName.haoma}}' class='footer_daohang lianxta_'>
+      <view>{{lianxita}}</view>
+    </view>
+  </view>
+</block>

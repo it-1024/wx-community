@@ -1,0 +1,136 @@
+
+  <view class='sousuo'>
+    <view bindtap='sousuo'>{{guanjianz}}</view>
+  </view>
+  <view class='banner_body'>
+    <swiper indicator-dots="false" autoplay="false" circular="true">
+      <swiper-item>
+        <image src='../images/banner_img_01.jpg'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='../images/banner_img_02.jpg'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='content_guangbo'>
+    <image class='guangbo_img' src='../images/guangbo_img.png'></image>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2500">
+      <swiper-item>
+        <view class="swiper_item">{{swiper_item01}}</view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper_item">{{swiper_item02}}</view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper_item">{{swiper_item03}}</view>
+      </swiper-item>
+    </swiper>
+    <view class='guangbo_gt'>></view>
+  </view>
+  <view class='daohang'>
+    <view class='content_daohang'>
+      <navigator url="../index7/index7?select_val={{fangyuan}}">
+        <view>
+          <image src='../images/daohang_01.png'></image>
+          <view>{{fangyuan}}</view>
+        </view>
+      </navigator>
+      <navigator url="../index7/index7?select_val={{zhuanzu}}">
+        <view>
+          <image src='../images/daohang_02.png'></image>
+          <view>{{zhuanzu}}</view>
+        </view>
+      </navigator>
+      <navigator url="../index7/index7?select_val={{quanzhi}}">
+        <view>
+          <image src='../images/daohang_03.png'></image>
+          <view>{{quanzhi}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='content_daohang content_daohang_02'>
+      <navigator url="../index7/index7?select_val={{jianzhi}}">
+        <view>
+          <image src='../images/daohang_04.png'></image>
+          <view>{{jianzhi}}</view>
+        </view>
+      </navigator>
+      <navigator url="../index7/index7?select_val={{ershouwupin}}">
+        <view>
+          <image src='../images/daohang_05.png'></image>
+          <view>{{ershouwupin}}</view>
+        </view>
+      </navigator>
+      <navigator url="../index7/index7?select_val={{congwu}}">
+        <view>
+          <image src='../images/daohang_06.png'></image>
+          <view>{{congwu}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='zuixinxiaoxi'>
+      <view>{{zuixinxiaoxi}}</view>
+    </view>
+    <block wx:for="{{datas}}" wx:for-index="idx" wx:for-item="dataName" wx:key="datas_key">
+      <view class='content_content'>
+        <view class='yonghuxinxi'>
+          <image src="{{dataName.touxiang_img}}"></image>
+          <view class='yonghux_img'>
+            <text>{{dataName.username}}</text>
+            <text class='times'>{{dataName.times}}</text>
+          </view>
+          <view bindtap='boda' id='{{dataName.haoma}}' class='lianxita'>{{lianxita}}</view>
+        </view>
+        <navigator url="../index4/index4?id={{dataName.id}}" hover-class="navigator-hover">
+          <view class='content_value'>
+            <view class='content_value_01'>
+              <text class='content_value_title'>#{{dataName.select_val}}#</text>
+              <text>{{dataName.neirong}}</text>
+            </view>
+          </view>
+        </navigator>
+        <view class='content_imgs' wx:if="{{dataName.imgurl_01=='undefined'?false:true}}">
+          <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_01=='undefined'?false:true}}"
+            id="{{img_url}}{{dataName.imgurl_01}}" src="{{img_url}}{{dataName.imgurl_01}}"></image>
+          <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_02=='undefined'?false:true}}"
+            id="{{img_url}}{{dataName.imgurl_02}}" src="{{img_url}}{{dataName.imgurl_02}}"></image>
+          <image bindtap='bindtap_img' wx:if="{{dataName.imgurl_03=='undefined'?false:true}}"
+            id="{{img_url}}{{dataName.imgurl_03}}" src="{{img_url}}{{dataName.imgurl_03}}"></image>
+        </view>
+        <view wx:if="{{dataName.dizhi=='undefined'?false:true}}" class='fabudizhi'>
+          <image src='../images/dizhi_img.png'></image>
+          <text>{{dataName.dizhi}}</text>
+        </view>
+        <view class='footer_lldf'>
+          <view class='footer_v'>
+            <image src='../images/liulan_img.png'></image>
+            <block wx:for="{{liulan}}" wx:for-index="idx" wx:for-item="liulanName" wx:key="liulan_key">
+              <block wx:if="{{dataName.id==liulanName.idx?true:false}}">
+                <text>{{liulanName.liulanliang}}</text>
+              </block>
+            </block>
+          </view>
+
+          <view class='footer_v'>
+            <image src='../images/ly_img.png'></image>
+          </view>
+
+          <view bindtap='dianzan' id="{{dataName.id}}" class='footer_v'>
+            <image src='../images/dianz_img.png'></image>
+            <block wx:for="{{zan_val}}" wx:for-index="idx" wx:for-item="zanName" wx:key="zan_key">
+              <block wx:if="{{dataName.id==zanName.idx?true:false}}">
+                <text>{{zanName.zan_val}}</text>
+              </block>
+            </block>
+          </view>
+
+          <button open-type="share" id='{{dataName.id}}' data-title='{{dataName.neirong}}' class='footer_v fenxiang'>
+            <image src='../images/fx_img.png'></image>
+            {{fenxiang}}
+          </button>
+        </view>
+      </view>
+    </block>
+  </view>

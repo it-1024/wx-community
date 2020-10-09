@@ -1,0 +1,25 @@
+<block wx:if="{{name==''?false:true}}">
+  <view class='content_wode'>
+    <view class='touxing_cont'>
+      <image class='touxing_img' src='{{touxing_img}}'></image>
+      <view class='name'>{{name}}</view>
+    </view>
+  </view>
+  <!--  -->
+  <view class='content_select'>
+    <view>
+      <text>{{guanyupt}}</text>
+    </view>
+    <view bindtap='shezhi'>
+      <text>{{shezhizhongxin}}</text>
+    </view>
+  </view>
+</block>
+<!--  -->
+<block wx:else>
+  <view class='tishi'>
+    <icon type="info" size="39" />
+    <view>{{tishishouq}}</view>
+  </view>
+  <button class='getUserInfo' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">{{quedingshouq}}</button>
+</block>
