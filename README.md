@@ -1,11 +1,7 @@
 # wx-community
 > 微信社区/信息发布类小程序 [点击进入官网](http://m.it-1024.net)
-
-
 <br>
 <br>
-
-
 ### 基本功能（V1版本）
 - [x]  相关信息搜索
 - [x]  获取定位信息
@@ -63,28 +59,16 @@
   - mysql 5.6
   - php 5.6
 
-
 <br>
 <br>
 
 > ### PC端版本演示地址 [https://life.it-1024.net](https://life.it-1024.net)（2022.06.15）
 
-<br>
-<br>
-
 > ### h5版本演示(手机扫码体验)（2022.06.15）
-
 <img src="https://s2.loli.net/2022/05/22/TdaWP4iDrUHnM3t.png" width="100px">
 
-<br>
-<br>
-
 > ### 安卓版本演示(安卓手机扫码下载体验)（2022.06.15）
-
 <img src="https://s2.loli.net/2022/05/22/sOjb2IZgvoVR6Yc.png" width="100px">
-
-<br>
-<br>
 
 ### 技术交流
 - QQ交流群(付费)，疑问解答
@@ -95,7 +79,6 @@
 
 <br>
 <br>
-
 ### 说明
 - 个人学习使用遵循GPL开源协议
 - 商用联系作者付费授权使用
