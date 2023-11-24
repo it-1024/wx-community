@@ -67,7 +67,7 @@
 <br>
 <br>
 
-> ### PC端版本演示地址 [https://life.it-1024.net](https://life.it1024.com.cn) 
+> ### PC端版本演示地址 [https://life.it1024.com.cn](https://life.it1024.com.cn) 
 
 <br>
 <br>
